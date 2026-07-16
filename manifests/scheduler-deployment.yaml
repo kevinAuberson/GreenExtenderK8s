@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: carbon-scheduler
+  namespace: kube-system
+  labels:
+    component: carbon-scheduler
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: carbon-scheduler
+  template:
+    metadata:
+      labels:
+        component: carbon-scheduler
+    spec:
+      serviceAccountName: carbon-scheduler
+      containers:
+        - name: scheduler
+          image: registry.k8s.io/kube-scheduler:v1.35.3
+          command:
+            - kube-scheduler
+            - --config=/etc/kubernetes/config.yaml
+            - --v=3
+          volumeMounts:
+            - name: config
+              mountPath: /etc/kubernetes
+              readOnly: true
+      volumes:
+        - name: config
+          configMap:
+            name: carbon-scheduler-config

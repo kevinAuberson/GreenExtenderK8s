@@ -1,0 +1,80 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: carbon-signal-aggregator
+  namespace: carbon-scheduler
+  labels:
+    app: carbon-signal-aggregator
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: carbon-signal-aggregator
+  template:
+    metadata:
+      labels:
+        app: carbon-signal-aggregator
+    spec:
+      serviceAccountName: carbon-signal-aggregator
+      imagePullSecrets:
+        - name: ghcr-auth
+      containers:
+        - name: aggregator
+          image: ghcr.io/kevinauberson/greenextenderk8s/aggregator:sha-62a44f41c142d36a00231e8ac68222baa318d5b0
+          imagePullPolicy: IfNotPresent
+
+          env:
+            - name: EMAPS_ZONE
+              value: "CH"
+            - name: PROMETHEUS_URL
+              value: "http://prometheus-kube-prometheus-prometheus.monitoring.svc.cluster.local:9090"
+            - name: IN_CLUSTER
+              value: "true"
+            - name: VCENTER_VERIFY_SSL
+              value: "false"
+            - name: POLL_INTERVAL
+              value: "30"
+            - name: EMAPS_CURRENT_TTL
+              value: "300"
+            - name: EMAPS_FORECAST_TTL
+              value: "3600"
+
+          envFrom:
+            - secretRef:
+                name: carbon-signal-secrets
+
+          volumeMounts:
+            - name: node-mapping
+              mountPath: /app/node_mapping.yaml
+              subPath: node_mapping.yaml
+              readOnly: true
+            - name: thresholds
+              mountPath: /app/thresholds.yaml
+              subPath: thresholds.yaml
+              readOnly: true
+
+          resources:
+            requests:
+              cpu: "50m"
+              memory: "64Mi"
+            limits:
+              cpu: "200m"
+              memory: "256Mi"
+
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 1000
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: ["ALL"]
+
+      volumes:
+        - name: node-mapping
+          configMap:
+            name: carbon-signal-node-mapping
+        - name: thresholds
+          configMap:
+            name: carbon-signal-thresholds

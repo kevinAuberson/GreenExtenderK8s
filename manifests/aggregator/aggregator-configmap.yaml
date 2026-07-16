@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: carbon-signal-node-mapping
+  namespace: carbon-scheduler
+data:
+  node_mapping.yaml: |
+    mapping:
+      iict-mv544-greenschedk8s-cp1: "IICT-MV544-greenschedk8s"
+      iict-mv545-greenschedk8s-wk2: "IICT-MV545-greenschedk8s"
+      iict-mv546-greenschedk8s-wk1: "IICT-MV546-greenschedk8s"
+      iict-mv566-greenschedk8s-w3: "IICT-MV566-greenschedk8s"
+      iict-mv567-greenschedk8s-w4: "IICT-MV567-greenschedk8s"

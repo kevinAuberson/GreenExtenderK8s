@@ -1,0 +1,1179 @@
+{
+  "generated_at": "2026-07-15T10:02:53.880066+00:00",
+  "baseline": {
+    "window": [
+      "2026-07-12T22:30:00Z",
+      "2026-07-14T22:30:00Z"
+    ],
+    "total_co2_g": 463.9972333333337,
+    "per_node_g": {
+      "iict-mv544-greenschedk8s-cp1": 88.66391044151504,
+      "iict-mv545-greenschedk8s-wk2": 38.44529690200919,
+      "iict-mv546-greenschedk8s-wk1": 72.88158324037524,
+      "iict-mv566-greenschedk8s-w3": 90.93549720755126,
+      "iict-mv567-greenschedk8s-w4": 173.07094554188305
+    },
+    "tasks_scheduled": null,
+    "tasks_scheduled_diagnosis": "metric_absent",
+    "tasks_scheduled_expected": 936
+  },
+  "carbon_aware": {
+    "window": [
+      "2026-07-10T21:00:00Z",
+      "2026-07-12T21:00:00Z"
+    ],
+    "total_co2_g": 417.35676666666603,
+    "per_node_g": {
+      "iict-mv544-greenschedk8s-cp1": 82.02608196023078,
+      "iict-mv545-greenschedk8s-wk2": 186.760968460193,
+      "iict-mv546-greenschedk8s-wk1": 89.77226473142541,
+      "iict-mv566-greenschedk8s-w3": 30.56189042396822,
+      "iict-mv567-greenschedk8s-w4": 28.235561090848574
+    },
+    "tasks_scheduled": null,
+    "tasks_scheduled_diagnosis": "metric_absent",
+    "tasks_scheduled_expected": 936,
+    "avg_gate_delay_s": 41.95032870804597,
+    "gate_delay_by_class_s": {
+      "batch": 42.833679478036174,
+      "best-effort": 34.828313124999994
+    },
+    "node_selection_distribution": {
+      "iict-mv545-greenschedk8s-wk2": 1.0012962962962964,
+      "iict-mv546-greenschedk8s-wk1": 3.0007236979627683,
+      "iict-mv566-greenschedk8s-w3": 428.0721676314565,
+      "iict-mv567-greenschedk8s-w4": 531.0922035075534
+    },
+    "reference_grid_ci_avg": 40.38701839639014,
+    "ci_at_decision_by_class": {
+      "batch": 33.80898876404495,
+      "best-effort": 31.58241758241758,
+      "latency-sensitive": 40.330388692579504
+    },
+    "ci_gap_by_class": {
+      "batch": 6.578029632345192,
+      "best-effort": 8.80460081397256,
+      "latency-sensitive": 0.05662970381063559
+    },
+    "delay_rate_ci_correlation": 0.7610757009207928,
+    "delay_rate_vs_ci_series": [
+      {
+        "timestamp": 1783717800,
+        "ci": 27.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783718400,
+        "ci": 28.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783719600,
+        "ci": 28.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783720200,
+        "ci": 28.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783721400,
+        "ci": 29.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783722000,
+        "ci": 27.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783723200,
+        "ci": 27.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783723800,
+        "ci": 27.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783725000,
+        "ci": 31.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783725600,
+        "ci": 31.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783726800,
+        "ci": 30.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783727400,
+        "ci": 30.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783728600,
+        "ci": 28.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783729200,
+        "ci": 28.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783730400,
+        "ci": 28.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783731000,
+        "ci": 28.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783732200,
+        "ci": 32.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783732800,
+        "ci": 32.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783734000,
+        "ci": 31.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783734600,
+        "ci": 31.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783735800,
+        "ci": 30.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783736400,
+        "ci": 31.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783737600,
+        "ci": 31.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783738200,
+        "ci": 31.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783739400,
+        "ci": 29.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783740000,
+        "ci": 29.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783741200,
+        "ci": 29.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783741800,
+        "ci": 29.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783743000,
+        "ci": 29.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783743600,
+        "ci": 29.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783744800,
+        "ci": 29.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783745400,
+        "ci": 29.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783746600,
+        "ci": 31.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783747200,
+        "ci": 30.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783748400,
+        "ci": 30.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783749000,
+        "ci": 30.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783750200,
+        "ci": 35.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783750800,
+        "ci": 33.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783752000,
+        "ci": 32.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783752600,
+        "ci": 32.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783753800,
+        "ci": 32.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783754400,
+        "ci": 32.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783755600,
+        "ci": 33.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783756200,
+        "ci": 33.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783757400,
+        "ci": 30.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783758000,
+        "ci": 33.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783759200,
+        "ci": 32.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783759800,
+        "ci": 32.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783761000,
+        "ci": 31.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783761600,
+        "ci": 31.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783762800,
+        "ci": 31.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783763400,
+        "ci": 31.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783764600,
+        "ci": 37.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783765200,
+        "ci": 37.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783766400,
+        "ci": 38.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783767000,
+        "ci": 38.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783768200,
+        "ci": 46.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783768800,
+        "ci": 46.0,
+        "delay_rate": 0.7692307692307693
+      },
+      {
+        "timestamp": 1783769400,
+        "ci": 46.0,
+        "delay_rate": 1.0
+      },
+      {
+        "timestamp": 1783770000,
+        "ci": 46.0,
+        "delay_rate": 0.9661016949152542
+      },
+      {
+        "timestamp": 1783770600,
+        "ci": 46.0,
+        "delay_rate": 0.9565217391304348
+      },
+      {
+        "timestamp": 1783771200,
+        "ci": 46.0,
+        "delay_rate": 1.0
+      },
+      {
+        "timestamp": 1783771800,
+        "ci": 50.0,
+        "delay_rate": 0.9777777777777777
+      },
+      {
+        "timestamp": 1783772400,
+        "ci": 50.0,
+        "delay_rate": 0.9642857142857144
+      },
+      {
+        "timestamp": 1783773000,
+        "ci": 50.0,
+        "delay_rate": 1.0
+      },
+      {
+        "timestamp": 1783773600,
+        "ci": 49.0,
+        "delay_rate": 0.9740259740259741
+      },
+      {
+        "timestamp": 1783774200,
+        "ci": 49.0,
+        "delay_rate": 0.9538461538461538
+      },
+      {
+        "timestamp": 1783774800,
+        "ci": 49.0,
+        "delay_rate": 1.0
+      },
+      {
+        "timestamp": 1783775400,
+        "ci": 52.0,
+        "delay_rate": 0.9746835443037973
+      },
+      {
+        "timestamp": 1783776000,
+        "ci": 53.0,
+        "delay_rate": 0.9565217391304348
+      },
+      {
+        "timestamp": 1783776600,
+        "ci": 53.0,
+        "delay_rate": 1.0
+      },
+      {
+        "timestamp": 1783777200,
+        "ci": 53.0,
+        "delay_rate": 0.9682539682539683
+      },
+      {
+        "timestamp": 1783777800,
+        "ci": 53.0,
+        "delay_rate": 0.9538461538461538
+      },
+      {
+        "timestamp": 1783778400,
+        "ci": 53.0,
+        "delay_rate": 1.0
+      },
+      {
+        "timestamp": 1783779000,
+        "ci": 57.0,
+        "delay_rate": 0.9795918367346939
+      },
+      {
+        "timestamp": 1783779600,
+        "ci": 57.0,
+        "delay_rate": 0.9642857142857144
+      },
+      {
+        "timestamp": 1783780200,
+        "ci": 57.0,
+        "delay_rate": 1.0
+      },
+      {
+        "timestamp": 1783780800,
+        "ci": 58.0,
+        "delay_rate": 0.9775280898876404
+      },
+      {
+        "timestamp": 1783781400,
+        "ci": 58.0,
+        "delay_rate": 0.9565217391304348
+      },
+      {
+        "timestamp": 1783782000,
+        "ci": 58.0,
+        "delay_rate": 1.0
+      },
+      {
+        "timestamp": 1783782600,
+        "ci": 61.0,
+        "delay_rate": 0.971830985915493
+      },
+      {
+        "timestamp": 1783783200,
+        "ci": 61.0,
+        "delay_rate": 0.9538461538461538
+      },
+      {
+        "timestamp": 1783783800,
+        "ci": 61.0,
+        "delay_rate": 1.0
+      },
+      {
+        "timestamp": 1783784400,
+        "ci": 59.0,
+        "delay_rate": 0.9692307692307692
+      },
+      {
+        "timestamp": 1783785000,
+        "ci": 59.0,
+        "delay_rate": 0.9516129032258064
+      },
+      {
+        "timestamp": 1783785600,
+        "ci": 59.0,
+        "delay_rate": 1.0
+      },
+      {
+        "timestamp": 1783786200,
+        "ci": 57.0,
+        "delay_rate": 0.98
+      },
+      {
+        "timestamp": 1783786800,
+        "ci": 56.0,
+        "delay_rate": 0.9647058823529411
+      },
+      {
+        "timestamp": 1783787400,
+        "ci": 56.0,
+        "delay_rate": 1.0
+      },
+      {
+        "timestamp": 1783788000,
+        "ci": 56.0,
+        "delay_rate": 0.9749999999999999
+      },
+      {
+        "timestamp": 1783788600,
+        "ci": 56.0,
+        "delay_rate": 0.9516129032258064
+      },
+      {
+        "timestamp": 1783789200,
+        "ci": 56.0,
+        "delay_rate": 1.0
+      },
+      {
+        "timestamp": 1783789800,
+        "ci": 46.0,
+        "delay_rate": 0.9726027397260274
+      },
+      {
+        "timestamp": 1783790400,
+        "ci": 46.0,
+        "delay_rate": 0.9545454545454545
+      },
+      {
+        "timestamp": 1783791000,
+        "ci": 46.0,
+        "delay_rate": 1.0
+      },
+      {
+        "timestamp": 1783791600,
+        "ci": 45.0,
+        "delay_rate": 0.9692307692307692
+      },
+      {
+        "timestamp": 1783792200,
+        "ci": 45.0,
+        "delay_rate": 0.9545454545454545
+      },
+      {
+        "timestamp": 1783792800,
+        "ci": 45.0,
+        "delay_rate": 1.0
+      },
+      {
+        "timestamp": 1783793400,
+        "ci": 34.0,
+        "delay_rate": 0.7575757575757575
+      },
+      {
+        "timestamp": 1783794000,
+        "ci": 34.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783795200,
+        "ci": 34.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783795800,
+        "ci": 34.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783797000,
+        "ci": 33.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783797600,
+        "ci": 33.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783798800,
+        "ci": 54.0,
+        "delay_rate": 0.8823529411764706
+      },
+      {
+        "timestamp": 1783799400,
+        "ci": 54.0,
+        "delay_rate": 0.90625
+      },
+      {
+        "timestamp": 1783800000,
+        "ci": 54.0,
+        "delay_rate": 1.0
+      },
+      {
+        "timestamp": 1783800600,
+        "ci": 33.0,
+        "delay_rate": 0.4761904761904762
+      },
+      {
+        "timestamp": 1783801200,
+        "ci": 28.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783802400,
+        "ci": 28.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783803000,
+        "ci": 28.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783804200,
+        "ci": 57.0,
+        "delay_rate": 0.7142857142857142
+      },
+      {
+        "timestamp": 1783804800,
+        "ci": 68.0,
+        "delay_rate": 0.90625
+      },
+      {
+        "timestamp": 1783805400,
+        "ci": 68.0,
+        "delay_rate": 1.0
+      },
+      {
+        "timestamp": 1783806000,
+        "ci": 68.0,
+        "delay_rate": 0.9743589743589742
+      },
+      {
+        "timestamp": 1783806600,
+        "ci": 68.0,
+        "delay_rate": 0.9545454545454545
+      },
+      {
+        "timestamp": 1783807200,
+        "ci": 68.0,
+        "delay_rate": 1.0
+      },
+      {
+        "timestamp": 1783807800,
+        "ci": 69.0,
+        "delay_rate": 0.9782608695652175
+      },
+      {
+        "timestamp": 1783808400,
+        "ci": 69.0,
+        "delay_rate": 0.9610389610389611
+      },
+      {
+        "timestamp": 1783809000,
+        "ci": 69.0,
+        "delay_rate": 1.0
+      },
+      {
+        "timestamp": 1783809600,
+        "ci": 69.0,
+        "delay_rate": 0.9718309859154929
+      },
+      {
+        "timestamp": 1783810200,
+        "ci": 69.0,
+        "delay_rate": 0.95
+      },
+      {
+        "timestamp": 1783810800,
+        "ci": 69.0,
+        "delay_rate": 1.0
+      },
+      {
+        "timestamp": 1783811400,
+        "ci": 74.0,
+        "delay_rate": 0.9740259740259739
+      },
+      {
+        "timestamp": 1783812000,
+        "ci": 74.0,
+        "delay_rate": 0.9523809523809523
+      },
+      {
+        "timestamp": 1783812600,
+        "ci": 74.0,
+        "delay_rate": 1.0
+      },
+      {
+        "timestamp": 1783813200,
+        "ci": 89.0,
+        "delay_rate": 0.9740259740259739
+      },
+      {
+        "timestamp": 1783813800,
+        "ci": 88.0,
+        "delay_rate": 0.953125
+      },
+      {
+        "timestamp": 1783814400,
+        "ci": 88.0,
+        "delay_rate": 1.0
+      },
+      {
+        "timestamp": 1783815000,
+        "ci": 63.0,
+        "delay_rate": 0.9772727272727274
+      },
+      {
+        "timestamp": 1783815600,
+        "ci": 63.0,
+        "delay_rate": 0.9638554216867471
+      },
+      {
+        "timestamp": 1783816200,
+        "ci": 63.0,
+        "delay_rate": 1.0
+      },
+      {
+        "timestamp": 1783816800,
+        "ci": 54.0,
+        "delay_rate": 0.967741935483871
+      },
+      {
+        "timestamp": 1783817400,
+        "ci": 54.0,
+        "delay_rate": 0.9558823529411764
+      },
+      {
+        "timestamp": 1783818000,
+        "ci": 54.0,
+        "delay_rate": 1.0
+      },
+      {
+        "timestamp": 1783818600,
+        "ci": 50.0,
+        "delay_rate": 0.9710144927536232
+      },
+      {
+        "timestamp": 1783819200,
+        "ci": 50.0,
+        "delay_rate": 0.9558823529411764
+      },
+      {
+        "timestamp": 1783819800,
+        "ci": 50.0,
+        "delay_rate": 1.0
+      },
+      {
+        "timestamp": 1783820400,
+        "ci": 50.0,
+        "delay_rate": 0.9740259740259739
+      },
+      {
+        "timestamp": 1783821000,
+        "ci": 50.0,
+        "delay_rate": 0.9571428571428571
+      },
+      {
+        "timestamp": 1783821600,
+        "ci": 50.0,
+        "delay_rate": 1.0
+      },
+      {
+        "timestamp": 1783822200,
+        "ci": 30.0,
+        "delay_rate": 0.40909090909090917
+      },
+      {
+        "timestamp": 1783822800,
+        "ci": 30.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783824000,
+        "ci": 28.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783824600,
+        "ci": 28.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783825800,
+        "ci": 28.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783826400,
+        "ci": 28.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783827600,
+        "ci": 27.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783828200,
+        "ci": 27.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783829400,
+        "ci": 27.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783830000,
+        "ci": 27.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783831200,
+        "ci": 27.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783831800,
+        "ci": 27.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783833000,
+        "ci": 37.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783833600,
+        "ci": 37.0,
+        "delay_rate": 0.7692307692307693
+      },
+      {
+        "timestamp": 1783834200,
+        "ci": 38.0,
+        "delay_rate": 1.0
+      },
+      {
+        "timestamp": 1783834800,
+        "ci": 38.0,
+        "delay_rate": 0.9661016949152542
+      },
+      {
+        "timestamp": 1783835400,
+        "ci": 38.0,
+        "delay_rate": 0.953125
+      },
+      {
+        "timestamp": 1783836000,
+        "ci": 38.0,
+        "delay_rate": 1.0
+      },
+      {
+        "timestamp": 1783836600,
+        "ci": 36.0,
+        "delay_rate": 0.31578947368421056
+      },
+      {
+        "timestamp": 1783837200,
+        "ci": 36.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783838400,
+        "ci": 36.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783839000,
+        "ci": 36.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783840200,
+        "ci": 38.0,
+        "delay_rate": 0.8823529411764706
+      },
+      {
+        "timestamp": 1783840800,
+        "ci": 39.0,
+        "delay_rate": 0.903225806451613
+      },
+      {
+        "timestamp": 1783841400,
+        "ci": 39.0,
+        "delay_rate": 1.0
+      },
+      {
+        "timestamp": 1783842000,
+        "ci": 39.0,
+        "delay_rate": 0.9726027397260274
+      },
+      {
+        "timestamp": 1783842600,
+        "ci": 39.0,
+        "delay_rate": 0.9565217391304348
+      },
+      {
+        "timestamp": 1783843200,
+        "ci": 39.0,
+        "delay_rate": 1.0
+      },
+      {
+        "timestamp": 1783843800,
+        "ci": 36.0,
+        "delay_rate": 0.6896551724137931
+      },
+      {
+        "timestamp": 1783844400,
+        "ci": 32.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783845600,
+        "ci": 32.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783846200,
+        "ci": 32.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783847400,
+        "ci": 34.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783848000,
+        "ci": 34.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783849200,
+        "ci": 33.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783849800,
+        "ci": 34.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783851000,
+        "ci": 36.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783851600,
+        "ci": 40.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783852800,
+        "ci": 40.0,
+        "delay_rate": 0.9500000000000001
+      },
+      {
+        "timestamp": 1783853400,
+        "ci": 40.0,
+        "delay_rate": 0.6206896551724138
+      },
+      {
+        "timestamp": 1783854600,
+        "ci": 41.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783855200,
+        "ci": 40.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783856400,
+        "ci": 40.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783857000,
+        "ci": 40.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783858200,
+        "ci": 40.0,
+        "delay_rate": 0.76
+      },
+      {
+        "timestamp": 1783858800,
+        "ci": 40.0,
+        "delay_rate": 0.7916666666666666
+      },
+      {
+        "timestamp": 1783859400,
+        "ci": 40.0,
+        "delay_rate": 1.0
+      },
+      {
+        "timestamp": 1783860000,
+        "ci": 40.0,
+        "delay_rate": 0.625
+      },
+      {
+        "timestamp": 1783860600,
+        "ci": 40.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783861800,
+        "ci": 39.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783862400,
+        "ci": 39.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783863600,
+        "ci": 39.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783864200,
+        "ci": 39.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783865400,
+        "ci": 40.0,
+        "delay_rate": 0.76
+      },
+      {
+        "timestamp": 1783866000,
+        "ci": 42.0,
+        "delay_rate": 0.7916666666666666
+      },
+      {
+        "timestamp": 1783866600,
+        "ci": 42.0,
+        "delay_rate": 1.0
+      },
+      {
+        "timestamp": 1783867200,
+        "ci": 42.0,
+        "delay_rate": 0.25
+      },
+      {
+        "timestamp": 1783867800,
+        "ci": 42.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783869000,
+        "ci": 48.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783869600,
+        "ci": 47.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783870800,
+        "ci": 47.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783871400,
+        "ci": 47.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783872600,
+        "ci": 50.0,
+        "delay_rate": 0.6551724137931034
+      },
+      {
+        "timestamp": 1783873200,
+        "ci": 50.0,
+        "delay_rate": 0.7916666666666666
+      },
+      {
+        "timestamp": 1783873800,
+        "ci": 46.0,
+        "delay_rate": 1.0
+      },
+      {
+        "timestamp": 1783874400,
+        "ci": 45.0,
+        "delay_rate": 0.5789473684210527
+      },
+      {
+        "timestamp": 1783875000,
+        "ci": 45.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783876200,
+        "ci": 53.0,
+        "delay_rate": 0.7894736842105263
+      },
+      {
+        "timestamp": 1783876800,
+        "ci": 40.0,
+        "delay_rate": 0.6250000000000001
+      },
+      {
+        "timestamp": 1783878000,
+        "ci": 39.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783878600,
+        "ci": 39.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783879800,
+        "ci": 31.0,
+        "delay_rate": 0.1764705882352941
+      },
+      {
+        "timestamp": 1783880400,
+        "ci": 31.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783881600,
+        "ci": 30.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783882200,
+        "ci": 30.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783883400,
+        "ci": 35.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783884000,
+        "ci": 45.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783885200,
+        "ci": 47.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783885800,
+        "ci": 47.0,
+        "delay_rate": 0.0
+      },
+      {
+        "timestamp": 1783887000,
+        "ci": 44.0,
+        "delay_rate": 0.7058823529411764
+      }
+    ],
+    "prioritize_latency_p95_s": 0.0009509824198552225,
+    "signal_staleness_pct": 0.0,
+    "realized_delay_gain_g_per_kwh": {
+      "p50": 27.340109072880516,
+      "p90": 45.88660907127429
+    }
+  },
+  "grid_condition_comparability": {
+    "baseline_window_avg_ci": 44.84172162443596,
+    "carbon_aware_window_avg_ci": 40.38701839639014,
+    "difference_g_per_kwh": -4.4547032280458225
+  },
+  "reduction_pct": 10.051884648450343
+}

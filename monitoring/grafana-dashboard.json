@@ -1,0 +1,340 @@
+{
+  "title": "Carbon-Aware Scheduler",
+  "uid": "carbon-aware-scheduler",
+  "description": "Metrics for the carbon-aware Kubernetes scheduler extender — temporal shifting, node scoring, and grid intensity.",
+  "schemaVersion": 38,
+  "version": 6,
+  "refresh": "30s",
+  "time": { "from": "now-3h", "to": "now" },
+  "timezone": "browser",
+  "tags": ["kubernetes", "carbon", "scheduler"],
+  "panels": [
+
+    {
+      "id": 1,
+      "title": "Grid Carbon Intensity",
+      "description": "Current CI from Electricity Maps. Colour follows dynamic green/dirty thresholds.",
+      "type": "stat",
+      "gridPos": { "h": 4, "w": 4, "x": 0, "y": 0 },
+      "targets": [{
+        "expr": "carbon_grid_intensity_current_g_per_kwh",
+        "legendFormat": "gCO₂eq/kWh"
+      }],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "reduceOptions": { "calcs": ["lastNotNull"] }
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "green", "value": null },
+              { "color": "yellow", "value": 40 },
+              { "color": "red", "value": 70 }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": 2,
+      "title": "Signal Age",
+      "description": "Age of the last carbon signal written by the aggregator. Turns red above 10 min (stale signal threshold).",
+      "type": "stat",
+      "gridPos": { "h": 4, "w": 4, "x": 4, "y": 0 },
+      "targets": [{
+        "expr": "carbon_signal_age_seconds",
+        "legendFormat": "age"
+      }],
+      "options": {
+        "colorMode": "background",
+        "reduceOptions": { "calcs": ["lastNotNull"] }
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "green", "value": null },
+              { "color": "yellow", "value": 300 },
+              { "color": "red", "value": 600 }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": 3,
+      "title": "Total Scheduling Decisions",
+      "type": "stat",
+      "gridPos": { "h": 4, "w": 4, "x": 8, "y": 0 },
+      "targets": [{
+        "expr": "sum(carbon_scheduling_decisions_total)",
+        "legendFormat": "total"
+      }],
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "reduceOptions": { "calcs": ["lastNotNull"] }
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "color": { "mode": "fixed", "fixedColor": "blue" }
+        }
+      }
+    },
+
+    {
+      "id": 4,
+      "title": "Delay Rate",
+      "description": "Fraction of scheduling decisions that result in a delay (pod kept in SchedulingGated state).",
+      "type": "stat",
+      "gridPos": { "h": 4, "w": 4, "x": 12, "y": 0 },
+      "targets": [{
+        "expr": "sum(rate(carbon_scheduling_decisions_total{decision=\"delay\"}[5m])) / sum(rate(carbon_scheduling_decisions_total[5m]))",
+        "legendFormat": "delay %"
+      }],
+      "options": {
+        "colorMode": "background",
+        "reduceOptions": { "calcs": ["lastNotNull"] }
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percentunit",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "green", "value": null },
+              { "color": "yellow", "value": 0.3 },
+              { "color": "red", "value": 0.7 }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": 10,
+      "title": "Green Threshold",
+      "description": "Current dynamic green threshold (P15 forecast or monthly table). Pods are scheduled immediately below this value.",
+      "type": "stat",
+      "gridPos": { "h": 4, "w": 4, "x": 16, "y": 0 },
+      "targets": [{
+        "expr": "carbon_green_threshold_g_per_kwh",
+        "legendFormat": "gCO₂eq/kWh"
+      }],
+      "options": {
+        "colorMode": "background",
+        "reduceOptions": { "calcs": ["lastNotNull"] }
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "color": { "mode": "fixed", "fixedColor": "green" }
+        }
+      }
+    },
+
+    {
+      "id": 11,
+      "title": "Dirty Threshold",
+      "description": "Current dynamic dirty threshold (P85 forecast or monthly table). All flexible pods are delayed above this value.",
+      "type": "stat",
+      "gridPos": { "h": 4, "w": 4, "x": 20, "y": 0 },
+      "targets": [{
+        "expr": "carbon_dirty_threshold_g_per_kwh",
+        "legendFormat": "gCO₂eq/kWh"
+      }],
+      "options": {
+        "colorMode": "background",
+        "reduceOptions": { "calcs": ["lastNotNull"] }
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "color": { "mode": "fixed", "fixedColor": "red" }
+        }
+      }
+    },
+
+    {
+      "id": 5,
+      "title": "Grid Carbon Intensity over Time",
+      "description": "Evolution of the grid CI with dynamic green/dirty threshold lines. Thresholds are updated every cycle from forecast P15/P85 or monthly historical table.",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 4 },
+      "targets": [
+        {
+          "expr": "carbon_grid_intensity_current_g_per_kwh",
+          "legendFormat": "CI gCO₂eq/kWh"
+        },
+        {
+          "expr": "carbon_green_threshold_g_per_kwh",
+          "legendFormat": "Green threshold"
+        },
+        {
+          "expr": "carbon_dirty_threshold_g_per_kwh",
+          "legendFormat": "Dirty threshold"
+        }
+      ],
+      "options": { "tooltip": { "mode": "single" } },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "custom": { "lineWidth": 2 }
+        },
+        "overrides": [
+          {
+            "matcher": { "id": "byName", "options": "Green threshold" },
+            "properties": [
+              { "id": "color", "value": { "mode": "fixed", "fixedColor": "green" } },
+              { "id": "custom.lineStyle", "value": { "fill": "dash", "dash": [10, 5] } },
+              { "id": "custom.lineWidth", "value": 1 }
+            ]
+          },
+          {
+            "matcher": { "id": "byName", "options": "Dirty threshold" },
+            "properties": [
+              { "id": "color", "value": { "mode": "fixed", "fixedColor": "red" } },
+              { "id": "custom.lineStyle", "value": { "fill": "dash", "dash": [10, 5] } },
+              { "id": "custom.lineWidth", "value": 1 }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "id": 6,
+      "title": "Scheduling Decisions Rate",
+      "description": "Rate of schedule_now vs delay decisions, broken down by carbon class.",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 4 },
+      "targets": [{
+        "expr": "sum by (decision, carbon_class) (rate(carbon_scheduling_decisions_total[5m]))",
+        "legendFormat": "{{decision}} / {{carbon_class}}"
+      }],
+      "options": { "tooltip": { "mode": "multi" } },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ops",
+          "custom": { "lineWidth": 2 }
+        }
+      }
+    },
+
+    {
+      "id": 7,
+      "title": "Node Carbon Scores (last prioritization)",
+      "description": "Score 0–100 per node per carbon class. 100 = lowest marginal carbon cost. Mean-centered: small cost differences give proportional scores rather than 0/100 extremes.",
+      "type": "bargauge",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 12 },
+      "targets": [{
+        "expr": "carbon_node_score",
+        "legendFormat": "{{node}} ({{carbon_class}})"
+      }],
+      "options": {
+        "reduceOptions": { "calcs": ["lastNotNull"] },
+        "orientation": "horizontal",
+        "displayMode": "gradient"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "min": 0,
+          "max": 100,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "red", "value": null },
+              { "color": "yellow", "value": 40 },
+              { "color": "green", "value": 60 }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": 8,
+      "title": "CI Gain from Delays (p50 / p90)",
+      "description": "Median and 90th percentile of the CI gain (gCO₂/kWh) achieved by delaying flexible pods to a greener window.",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 12 },
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.5, sum(rate(carbon_delay_gain_g_per_kwh_bucket[10m])) by (le, carbon_class))",
+          "legendFormat": "p50 {{carbon_class}}"
+        },
+        {
+          "expr": "histogram_quantile(0.9, sum(rate(carbon_delay_gain_g_per_kwh_bucket[10m])) by (le, carbon_class))",
+          "legendFormat": "p90 {{carbon_class}}"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "custom": { "lineWidth": 2 }
+        }
+      }
+    },
+
+    {
+      "id": 12,
+      "title": "Node Power Consumption (Watts)",
+      "description": "Real-time power draw per node from vSphere ESXi sensors. Updated every 30 s by the aggregator.",
+      "type": "bargauge",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 20 },
+      "targets": [{
+        "expr": "carbon_node_watts",
+        "legendFormat": "{{node}}"
+      }],
+      "options": {
+        "reduceOptions": { "calcs": ["lastNotNull"] },
+        "orientation": "horizontal",
+        "displayMode": "gradient"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "watt",
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "green", "value": null },
+              { "color": "yellow", "value": 200 },
+              { "color": "red", "value": 400 }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": 13,
+      "title": "Node CO₂ Emission Rate",
+      "description": "CO₂ emission rate per node in gCO₂eq/s = (watts × grid_intensity) / 3_600_000. Reflects both power draw and current grid cleanliness.",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 20 },
+      "targets": [{
+        "expr": "carbon_node_co2_g_per_s",
+        "legendFormat": "{{node}}"
+      }],
+      "options": { "tooltip": { "mode": "multi" } },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "custom": { "lineWidth": 2 }
+        }
+      }
+    }
+
+  ]
+}

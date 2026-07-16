@@ -1,0 +1,62 @@
+# Helm values for Apache Airflow (chart 1.16.0) with KubernetesExecutor
+# Deploy with:
+#   kubectl create namespace airflow
+#   kubectl apply -f experiments/benchmark/airflow/manifests/postgres.yaml
+#   helm install airflow apache-airflow/airflow -n airflow \
+#     -f experiments/benchmark/airflow/values-airflow.yaml --version 1.16.0
+
+executor: KubernetesExecutor
+
+# Use external PostgreSQL (standard image, no Bitnami dependency)
+postgresql:
+  enabled: false
+
+data:
+  metadataConnection:
+    user: airflow
+    pass: airflow
+    host: postgres.airflow.svc.cluster.local
+    port: 5432
+    db: airflow
+    protocol: postgresql
+
+# DAGs synced from public GitHub repo
+dags:
+  gitSync:
+    enabled: true
+    repo: https://github.com/kevinauberson/GreenExtenderK8s.git
+    branch: develop
+    subPath: experiments/benchmark/airflow/dags
+    wait: 60
+
+# Web UI
+webserver:
+  defaultUser:
+    enabled: true
+    username: admin
+    password: admin
+
+# Environment variable to control the benchmark phase.
+# baseline : default scheduler, no scheduling gates
+# carbon   : carbon-aware scheduler + scheduling gates on worker pods
+env:
+  - name: BENCHMARK_PHASE
+    value: "baseline"
+
+# Minimal resources for the TB cluster
+scheduler:
+  resources:
+    requests:
+      cpu: 250m
+      memory: 512Mi
+    limits:
+      cpu: 500m
+      memory: 1Gi
+
+triggerer:
+  enabled: false
+
+# No persistent logs
+logs:
+  persistence:
+    enabled: false

@@ -1,0 +1,54 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: carbon-signal-aggregator
+  namespace: carbon-scheduler
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: carbon-signal-aggregator
+rules:
+  - apiGroups: [""]
+    resources: ["nodes"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: ["metrics.k8s.io"]
+    resources: ["nodes", "pods"]
+    verbs: ["get", "list"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: carbon-signal-aggregator
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: carbon-signal-aggregator
+subjects:
+  - kind: ServiceAccount
+    name: carbon-signal-aggregator
+    namespace: carbon-scheduler
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: carbon-signal-configmap-writer
+  namespace: carbon-scheduler
+rules:
+  - apiGroups: [""]
+    resources: ["configmaps"]
+    verbs: ["get", "list", "create", "update", "patch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: carbon-signal-configmap-writer
+  namespace: carbon-scheduler
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: carbon-signal-configmap-writer
+subjects:
+  - kind: ServiceAccount
+    name: carbon-signal-aggregator
+    namespace: carbon-scheduler

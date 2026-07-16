@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: carbon-extender
+  namespace: carbon-scheduler
+  labels:
+    app: carbon-extender
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: carbon-extender
+  template:
+    metadata:
+      labels:
+        app: carbon-extender
+    spec:
+      serviceAccountName: carbon-extender
+      imagePullSecrets:
+        - name: ghcr-auth
+      containers:
+        - name: extender
+          image: ghcr.io/kevinauberson/greenextenderk8s/extender:sha-1811f2b9e1447ae99272c53a66241f46fcbb3c9e
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+              name: http
+          env:
+            - name: DEFAULT_MAX_DELAY_HOURS
+              value: "24"
+            - name: MIN_GAIN_TO_DELAY_G_PER_KWH
+              value: "10"
+            - name: IN_CLUSTER
+              value: "true"
+          volumeMounts:
+            - name: carbon-signal
+              mountPath: /etc/carbon-signal
+              readOnly: true
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            initialDelaySeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 30
+      volumes:
+        - name: carbon-signal
+          configMap:
+            name: carbon-signal

@@ -1,0 +1,350 @@
+{
+  "DE": {
+    "latency-sensitive": {
+      "n_pods": 35037,
+      "n_delayed": 0,
+      "delay_rate_pct": 0.0,
+      "avg_delay_hours": 0.0,
+      "avg_ci_baseline": 340.1371661386534,
+      "avg_ci_carbon_aware": 340.1371661386534,
+      "co2_reduction_pct": 0.0,
+      "delay_histogram_hours": {
+        "0-2h": 0,
+        "2-4h": 0,
+        "4-8h": 0,
+        "8-16h": 0,
+        "16-24h": 0,
+        "24h+": 0
+      }
+    },
+    "batch": {
+      "n_pods": 17519,
+      "n_delayed": 3682,
+      "delay_rate_pct": 21.017181345967234,
+      "avg_delay_hours": 4.75312330255296,
+      "avg_ci_baseline": 340.13494891260916,
+      "avg_ci_carbon_aware": 323.54240082196475,
+      "co2_reduction_pct": 4.878224993841352,
+      "delay_histogram_hours": {
+        "0-2h": 640,
+        "2-4h": 1044,
+        "4-8h": 1310,
+        "8-16h": 626,
+        "16-24h": 58,
+        "24h+": 4
+      }
+    },
+    "best-effort": {
+      "n_pods": 4380,
+      "n_delayed": 3517,
+      "delay_rate_pct": 80.29680365296804,
+      "avg_delay_hours": 11.357122547625819,
+      "avg_ci_baseline": 340.13310502283105,
+      "avg_ci_carbon_aware": 235.55221232876713,
+      "co2_reduction_pct": 30.74704906687753,
+      "delay_histogram_hours": {
+        "0-2h": 162,
+        "2-4h": 334,
+        "4-8h": 672,
+        "8-16h": 1263,
+        "16-24h": 1086,
+        "24h+": 0
+      }
+    },
+    "_trace_stats": {
+      "mean_ci_g_per_kwh": 340.1305148401826,
+      "stdev_ci_g_per_kwh": 132.159244095719,
+      "cov": 0.388554505783807
+    }
+  },
+  "ES": {
+    "latency-sensitive": {
+      "n_pods": 35037,
+      "n_delayed": 0,
+      "delay_rate_pct": 0.0,
+      "avg_delay_hours": 0.0,
+      "avg_ci_baseline": 135.46662956303337,
+      "avg_ci_carbon_aware": 135.46662956303337,
+      "co2_reduction_pct": 0.0,
+      "delay_histogram_hours": {
+        "0-2h": 0,
+        "2-4h": 0,
+        "4-8h": 0,
+        "8-16h": 0,
+        "16-24h": 0,
+        "24h+": 0
+      }
+    },
+    "batch": {
+      "n_pods": 17519,
+      "n_delayed": 3142,
+      "delay_rate_pct": 17.934813630915006,
+      "avg_delay_hours": 3.086569064290261,
+      "avg_ci_baseline": 135.46816599120953,
+      "avg_ci_carbon_aware": 129.7972281522918,
+      "co2_reduction_pct": 4.186177466435703,
+      "delay_histogram_hours": {
+        "0-2h": 880,
+        "2-4h": 1212,
+        "4-8h": 912,
+        "8-16h": 138,
+        "16-24h": 0,
+        "24h+": 0
+      }
+    },
+    "best-effort": {
+      "n_pods": 4380,
+      "n_delayed": 3253,
+      "delay_rate_pct": 74.26940639269407,
+      "avg_delay_hours": 9.455272056563171,
+      "avg_ci_baseline": 135.47174429223745,
+      "avg_ci_carbon_aware": 97.11358219178082,
+      "co2_reduction_pct": 28.31451111879908,
+      "delay_histogram_hours": {
+        "0-2h": 232,
+        "2-4h": 395,
+        "4-8h": 741,
+        "8-16h": 1315,
+        "16-24h": 570,
+        "24h+": 0
+      }
+    },
+    "_trace_stats": {
+      "mean_ci_g_per_kwh": 135.4712385844749,
+      "stdev_ci_g_per_kwh": 46.4785420473981,
+      "cov": 0.34308789476679796
+    }
+  },
+  "PL": {
+    "latency-sensitive": {
+      "n_pods": 35037,
+      "n_delayed": 0,
+      "delay_rate_pct": 0.0,
+      "avg_delay_hours": 0.0,
+      "avg_ci_baseline": 562.6323432371493,
+      "avg_ci_carbon_aware": 562.6323432371493,
+      "co2_reduction_pct": 0.0,
+      "delay_histogram_hours": {
+        "0-2h": 0,
+        "2-4h": 0,
+        "4-8h": 0,
+        "8-16h": 0,
+        "16-24h": 0,
+        "24h+": 0
+      }
+    },
+    "batch": {
+      "n_pods": 17519,
+      "n_delayed": 3768,
+      "delay_rate_pct": 21.50807694503111,
+      "avg_delay_hours": 4.145966029723992,
+      "avg_ci_baseline": 562.633967121411,
+      "avg_ci_carbon_aware": 550.8850876191564,
+      "co2_reduction_pct": 2.088192357522467,
+      "delay_histogram_hours": {
+        "0-2h": 826,
+        "2-4h": 1190,
+        "4-8h": 1212,
+        "8-16h": 518,
+        "16-24h": 22,
+        "24h+": 0
+      }
+    },
+    "best-effort": {
+      "n_pods": 4380,
+      "n_delayed": 3633,
+      "delay_rate_pct": 82.94520547945206,
+      "avg_delay_hours": 11.068263143407652,
+      "avg_ci_baseline": 562.6001780821917,
+      "avg_ci_carbon_aware": 452.40264611872146,
+      "co2_reduction_pct": 19.587183981902545,
+      "delay_histogram_hours": {
+        "0-2h": 206,
+        "2-4h": 356,
+        "4-8h": 695,
+        "8-16h": 1326,
+        "16-24h": 1050,
+        "24h+": 0
+      }
+    },
+    "_trace_stats": {
+      "mean_ci_g_per_kwh": 562.6372146118722,
+      "stdev_ci_g_per_kwh": 106.01081461881954,
+      "cov": 0.18841770836639324
+    }
+  },
+  "US-CAL-CISO": {
+    "latency-sensitive": {
+      "n_pods": 35037,
+      "n_delayed": 0,
+      "delay_rate_pct": 0.0,
+      "avg_delay_hours": 0.0,
+      "avg_ci_baseline": 205.7562082940891,
+      "avg_ci_carbon_aware": 205.7562082940891,
+      "co2_reduction_pct": 0.0,
+      "delay_histogram_hours": {
+        "0-2h": 0,
+        "2-4h": 0,
+        "4-8h": 0,
+        "8-16h": 0,
+        "16-24h": 0,
+        "24h+": 0
+      }
+    },
+    "batch": {
+      "n_pods": 17519,
+      "n_delayed": 2732,
+      "delay_rate_pct": 15.594497402819796,
+      "avg_delay_hours": 3.4560761346998534,
+      "avg_ci_baseline": 205.75772646840574,
+      "avg_ci_carbon_aware": 198.029589017638,
+      "co2_reduction_pct": 3.755940339841568,
+      "delay_histogram_hours": {
+        "0-2h": 610,
+        "2-4h": 972,
+        "4-8h": 998,
+        "8-16h": 148,
+        "16-24h": 4,
+        "24h+": 0
+      }
+    },
+    "best-effort": {
+      "n_pods": 4380,
+      "n_delayed": 3511,
+      "delay_rate_pct": 80.15981735159818,
+      "avg_delay_hours": 10.372828254058673,
+      "avg_ci_baseline": 205.67390639269405,
+      "avg_ci_carbon_aware": 113.95841095890411,
+      "co2_reduction_pct": 44.592674414749126,
+      "delay_histogram_hours": {
+        "0-2h": 189,
+        "2-4h": 357,
+        "4-8h": 728,
+        "8-16h": 1449,
+        "16-24h": 788,
+        "24h+": 0
+      }
+    },
+    "_trace_stats": {
+      "mean_ci_g_per_kwh": 205.7607625570776,
+      "stdev_ci_g_per_kwh": 88.09712655915715,
+      "cov": 0.42815318851046336
+    }
+  },
+  "US-MIDA-PJM": {
+    "latency-sensitive": {
+      "n_pods": 35037,
+      "n_delayed": 0,
+      "delay_rate_pct": 0.0,
+      "avg_delay_hours": 0.0,
+      "avg_ci_baseline": 411.9144698461626,
+      "avg_ci_carbon_aware": 411.9144698461626,
+      "co2_reduction_pct": 0.0,
+      "delay_histogram_hours": {
+        "0-2h": 0,
+        "2-4h": 0,
+        "4-8h": 0,
+        "8-16h": 0,
+        "16-24h": 0,
+        "24h+": 0
+      }
+    },
+    "batch": {
+      "n_pods": 17519,
+      "n_delayed": 3102,
+      "delay_rate_pct": 17.706490096466695,
+      "avg_delay_hours": 3.5428755641521597,
+      "avg_ci_baseline": 411.9152383126891,
+      "avg_ci_carbon_aware": 408.6864672641133,
+      "co2_reduction_pct": 0.7838435552425027,
+      "delay_histogram_hours": {
+        "0-2h": 738,
+        "2-4h": 1120,
+        "4-8h": 982,
+        "8-16h": 262,
+        "16-24h": 0,
+        "24h+": 0
+      }
+    },
+    "best-effort": {
+      "n_pods": 4380,
+      "n_delayed": 3247,
+      "delay_rate_pct": 74.1324200913242,
+      "avg_delay_hours": 9.997844163843547,
+      "avg_ci_baseline": 411.9037899543379,
+      "avg_ci_carbon_aware": 388.9854109589041,
+      "co2_reduction_pct": 5.5640126540167145,
+      "delay_histogram_hours": {
+        "0-2h": 249,
+        "2-4h": 394,
+        "4-8h": 708,
+        "8-16h": 1143,
+        "16-24h": 753,
+        "24h+": 0
+      }
+    },
+    "_trace_stats": {
+      "mean_ci_g_per_kwh": 411.91677511415526,
+      "stdev_ci_g_per_kwh": 45.85256885564598,
+      "cov": 0.11131512874885653
+    }
+  },
+  "US-TEX-ERCO": {
+    "latency-sensitive": {
+      "n_pods": 35037,
+      "n_delayed": 0,
+      "delay_rate_pct": 0.0,
+      "avg_delay_hours": 0.0,
+      "avg_ci_baseline": 362.0486619859006,
+      "avg_ci_carbon_aware": 362.0486619859006,
+      "co2_reduction_pct": 0.0,
+      "delay_histogram_hours": {
+        "0-2h": 0,
+        "2-4h": 0,
+        "4-8h": 0,
+        "8-16h": 0,
+        "16-24h": 0,
+        "24h+": 0
+      }
+    },
+    "batch": {
+      "n_pods": 17519,
+      "n_delayed": 3340,
+      "delay_rate_pct": 19.065015126434158,
+      "avg_delay_hours": 3.492215568862276,
+      "avg_ci_baseline": 362.05116330840804,
+      "avg_ci_carbon_aware": 348.6857851475541,
+      "co2_reduction_pct": 3.691571665927462,
+      "delay_histogram_hours": {
+        "0-2h": 826,
+        "2-4h": 1228,
+        "4-8h": 994,
+        "8-16h": 292,
+        "16-24h": 0,
+        "24h+": 0
+      }
+    },
+    "best-effort": {
+      "n_pods": 4380,
+      "n_delayed": 3533,
+      "delay_rate_pct": 80.662100456621,
+      "avg_delay_hours": 10.931502971978487,
+      "avg_ci_baseline": 362.1209383561644,
+      "avg_ci_carbon_aware": 269.63800684931505,
+      "co2_reduction_pct": 25.539238887061444,
+      "delay_histogram_hours": {
+        "0-2h": 148,
+        "2-4h": 370,
+        "4-8h": 722,
+        "8-16h": 1312,
+        "16-24h": 981,
+        "24h+": 0
+      }
+    },
+    "_trace_stats": {
+      "mean_ci_g_per_kwh": 362.0561655251142,
+      "stdev_ci_g_per_kwh": 94.93984810046929,
+      "cov": 0.2622240888033814
+    }
+  }
+}

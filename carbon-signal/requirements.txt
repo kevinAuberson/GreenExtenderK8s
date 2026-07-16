@@ -1,0 +1,5 @@
+requests>=2.31.0
+kubernetes>=29.0.0
+pyVmomi>=8.0.2
+python-dotenv>=1.0.0
+PyYAML>=6.0.0
