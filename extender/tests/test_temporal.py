@@ -15,7 +15,6 @@ import pytest
 from temporal import DelayDecision, TemporalScheduler
 
 
-
 def make_forecast(current_ci, hourly_values):
     """Generate a forecast from a list of hourly intensities."""
     now = datetime.now(UTC)
@@ -67,8 +66,6 @@ def make_pod_batch(annotations=None, age_hours=0):
 def scheduler():
     loader = MagicMock()
     return TemporalScheduler(loader), loader
-
-
 
 
 def test_latency_sensitive_never_delayed_even_red(scheduler):
