@@ -20,7 +20,7 @@ spec:
         - name: ghcr-auth
       containers:
         - name: extender
-          image: ghcr.io/kevinauberson/greenextenderk8s/extender:sha-1811f2b9e1447ae99272c53a66241f46fcbb3c9e
+          image: ghcr.io/kevinauberson/greenextenderk8s/extender:sha-8c39ab3deae5146361401631a13b2bf726c8f2c5
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
