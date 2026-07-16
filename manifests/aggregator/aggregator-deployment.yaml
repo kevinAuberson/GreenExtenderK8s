@@ -22,7 +22,7 @@ spec:
         - name: ghcr-auth
       containers:
         - name: aggregator
-          image: ghcr.io/kevinauberson/greenextenderk8s/aggregator:sha-62a44f41c142d36a00231e8ac68222baa318d5b0
+          image: ghcr.io/kevinauberson/greenextenderk8s/aggregator:sha-f48392b09690a187c107e8573a65bc699c1688e8
           imagePullPolicy: IfNotPresent
 
           env:
