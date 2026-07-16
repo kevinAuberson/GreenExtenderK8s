@@ -108,10 +108,11 @@ def test_besteffort_scheduled_when_already_optimal(scheduler):
     assert "near-optimal" in reason.lower() or "green" in reason.lower()
 
 
-def test_besteffort_scheduled_when_gain_is_small(scheduler):
-    """Best-effort: not delayed when the gain is too small."""
-    sched, loader = scheduler
-    # 45 now, 42 in 5h -> gain of 3 only < MIN_GAIN_TO_DELAY (10)
+def test_besteffort_scheduled_when_gain_is_small():
+    """Best-effort: not delayed when the gain is below the configured min_gain_to_delay."""
+    loader = MagicMock()
+    sched = TemporalScheduler(loader, min_gain_to_delay=10)
+    # 45 now, 42 in 5h -> gain of 3 only < min_gain_to_delay (10)
     forecast = make_forecast(45, [44, 43, 43, 42, 42])
     loader.load.return_value = make_signal(ci=45, forecast=forecast)
 
